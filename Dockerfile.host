@@ -1,0 +1,67 @@
+FROM ubuntu:jammy
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN sed -i 's/\# deb-src/deb-src/g' /etc/apt/sources.list  && \ 
+apt update && \
+apt install -y \
+  make \
+  build-essential \
+  libclang-dev \
+  ninja-build \
+  gcc \
+  git \
+  bison \
+  python3 \
+  gperf \
+  pkg-config \
+  libfontconfig1-dev \
+  libfreetype6-dev \
+  libx11-dev \
+  libx11-xcb-dev \
+  libxext-dev \
+  libxfixes-dev \
+  libxi-dev \
+  libxrender-dev \
+  libxcb1-dev \
+  libxcb-glx0-dev \
+  libxcb-keysyms1-dev \
+  libxcb-image0-dev \
+  libxcb-shm0-dev \
+  libxcb-icccm4-dev \
+  libxcb-sync-dev \
+  libxcb-xfixes0-dev \
+  libxcb-shape0-dev \
+  libxcb-randr0-dev \
+  libxcb-render-util0-dev \
+  libxcb-util-dev \
+  libxcb-xinerama0-dev \
+  libxcb-xkb-dev \
+  libxkbcommon-dev \
+  libxkbcommon-x11-dev \
+  libatspi2.0-dev \
+  libgl1-mesa-dev \
+  libglu1-mesa-dev \
+  freeglut3-dev \
+  cmake \
+  unzip \
+  gfortran \
+  subversion \
+  nano \
+  gcc-aarch64-linux-gnu \
+  g++-aarch64-linux-gnu \
+  python3 \
+  gdb-multiarch \
+  wget \
+  flex \
+  texinfo \
+  gawk \
+  openssl \
+  pigz \
+  libncurses-dev \
+  autoconf \
+  automake \
+  tar \
+  figlet \
+  lsb-release \
+  cowsay
