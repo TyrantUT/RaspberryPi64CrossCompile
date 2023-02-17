@@ -1,0 +1,9 @@
+FROM built
+
+COPY {your Github private key} /root/.ssh/
+COPY running_entrypoint.sh /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/running_entrypoint.sh && \
+	touch /root/.ssh/known_hosts
+
+CMD /usr/local/bin/running_entrypoint.sh
