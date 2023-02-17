@@ -1,0 +1,13 @@
+FROM --platform=linux/arm64/v8 rpi as rpi
+FROM host
+
+WORKDIR /build
+COPY build_qt5.sh /usr/local/bin/
+RUN mkdir -p /sysroot/usr /sysroot/opt /sysroot/lib && \
+	chmod +x /usr/local/bin/build_qt5.sh
+		
+COPY --from=rpi /lib/ /sysroot/lib/
+COPY --from=rpi /usr/include/ /sysroot/usr/include/
+COPY --from=rpi /usr/lib/ /sysroot/usr/lib/
+
+CMD /usr/local/bin/build_qt5.sh
