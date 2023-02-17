@@ -29,6 +29,19 @@ docker run \
 	--mount src="$(pwd)/build",target=/build,type=bind \
 	building
 ```
+## Commit the building container to built image
+### Get the building Container ID
+```
+docker ps -a
+```
+### Commit the image
+```
+docker commit {containerID} built
+```
+### Remove the old container
+```
+docker rm {containerID}
+```
 
 ## Compile .pro file from Github
 ```
