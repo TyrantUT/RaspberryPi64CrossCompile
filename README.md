@@ -25,7 +25,6 @@ mkdir build && mkdir built
 ## Build and Compile Qt 5.15.8
 ```
 docker run \
-	--rm \
 	--mount src="$(pwd)/build",target=/build,type=bind \
 	building
 ```
